@@ -12,11 +12,16 @@ const NavBar = ()=>{
 					<div className="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
 						<div className="navbar-nav">
 							<a className="nav-link active" href="/#">INICIO</a>
-                            <li className="nav-item dropdown">
-                                <a className="nav-link dropdown-toggle" href="/#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    PRODUCTOS
-                                </a>
-                            </li>
+							<li className="nav-item dropdown">
+								<a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+									PRODUCTOS
+								</a>
+								<ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+									<li><a className="dropdown-item" href="/#">REMERAS</a></li>
+									<li><a className="dropdown-item" href="/#">ZAPATOS</a></li>
+									<li><a className="dropdown-item" href="/#">BLUZAS</a></li>
+								</ul>
+							</li>
                             <a className="nav-link " href="/#">NOSOTRAS</a>
                             <a className="nav-link " href="/#">FLOR DE DATA</a>
                             <a className="nav-link " href="/#">COMO COMPRAR</a>
