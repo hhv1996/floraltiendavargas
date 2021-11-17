@@ -13,7 +13,7 @@ const NavBar = ()=>{
 						<div className="navbar-nav">
 							<a className="nav-link active" href="/#">INICIO</a>
 							<li className="nav-item dropdown">
-								<a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+								<a className="nav-link dropdown-toggle" href="/#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 									PRODUCTOS
 								</a>
 								<ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
