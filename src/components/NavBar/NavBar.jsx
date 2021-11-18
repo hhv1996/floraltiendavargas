@@ -1,5 +1,6 @@
 import './NavBar.css'
 import Logo from './logo.png'
+import Shopwidget from './CartWidget/CartWidget'
 
 const NavBar = ()=>{
     return(
@@ -26,6 +27,7 @@ const NavBar = ()=>{
                             <a className="nav-link " href="/#">FLOR DE DATA</a>
                             <a className="nav-link " href="/#">COMO COMPRAR</a>
                             <a className="nav-link " href="/#">CONTACTO</a>
+							<Shopwidget numCompra={5}/>
 						</div>
 					</div>
 				</div>
