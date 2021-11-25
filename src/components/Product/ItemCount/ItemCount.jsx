@@ -25,13 +25,13 @@ const ItemCount = ({stock,initial,title,desc})=>{
     }
     const msgBuy = ()=>{
         if (stock>=itemcount) {
-            alert("Compraste:"+itemcount+" SuperTrajes");
+            alert(`Compraste:${itemcount}SuperTrajes`);
         }else{
             alert("No hay Stock");
         }
     }
     return(
-        <div className={"itemCounter"+" "+disabled}>
+        <div className={`itemCounter ${disabled}`}>
             <div className="card">
                 <div className="card-body">
                     <h5 className="card-title">{title}</h5>
