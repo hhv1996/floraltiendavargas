@@ -1,5 +1,5 @@
 .itemCounter{
-    width: fit-content;
+    width: 100%!important;
 }
 .itemCountButtonAddToBag{
     padding-top: 10px;

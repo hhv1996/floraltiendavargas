@@ -1,0 +1,10 @@
+.carousel{
+    width: 31rem;    
+    font-family: Karla,sans-serif!important;
+    background-color: transparent!important;
+    margin: 10px;
+}
+.img-fit{
+    height: 31rem;
+    object-fit:cover;
+}

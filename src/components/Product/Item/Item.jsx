@@ -4,11 +4,11 @@ import VisibilityIcon from '@mui/icons-material/Visibility';
 const Item = ({key,title,description,price,imgUrl,stock})=>{
     return(
         <div>
-            <div class="card">
-                <img class="card-img-top" src={imgUrl} alt={title}/>
-                <div class="card-body">
-                    <p class="card-text">{title}</p>
-                    <p class="card-text">{price}</p>
+            <div class="card itemCard">
+                <img class="card-img-top itemCardTop" src={imgUrl} alt={title}/>
+                <div class="card-body itemCardBody">
+                    <p class="card-text itemCardText">{title}</p>
+                    <p class="card-text itemCardText" >{price}</p>
                 </div>
                 <div className="hoverDiv">
                     <VisibilityIcon fontSize="large"/>

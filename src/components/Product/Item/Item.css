@@ -1,4 +1,4 @@
-.card{
+.itemCard{
     width: 18rem;    
     height: 25rem;
     font-family: Karla,sans-serif!important;
@@ -8,20 +8,20 @@
     transition: all 300ms;
     position: absolute; 
 }
-.card:hover{
+.itemCard:hover{
     transform: scale(1.05);
 }
-.card-img-top{
+.itemCardTop{
     height: 21rem;
     object-fit:cover;
 }
-.card-text{
+.itemCardText{
     font-size: 14px;
     letter-spacing: .56px;
     margin:  0px!important;
     text-rendering: optimizeLegibility;
 }
-.card-body{
+.itemCardBody{
     padding: 5px!important;
 }
 .hoverDiv{
