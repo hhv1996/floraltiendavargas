@@ -3,6 +3,7 @@ import './App.css';
 import Navbar from './components/NavBar/NavBar'
 import ItemListcontainer from './components/Product/ItemListContainer/ItemListContainer'
 import ItemDetailContainer from './components/Product/ItemDetailContainer/ItemDetailContainer'
+import Footer from './components/Footer/Footer'
 
 
 const getItems=()=>{
@@ -67,6 +68,7 @@ function App() {
       <Navbar/>
       {/* <ItemListcontainer props={listProducts}/> */}
       <ItemDetailContainer/>
+      <Footer/>
     </div>
 
   );
