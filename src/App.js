@@ -4,6 +4,8 @@ import Navbar from './components/NavBar/NavBar'
 import ItemListcontainer from './components/Product/ItemListContainer/ItemListContainer'
 import ItemDetailContainer from './components/Product/ItemDetailContainer/ItemDetailContainer'
 import Footer from './components/Footer/Footer'
+import Carousel from './components/Carousel/CarouselContainer/CarouselContainer'
+import ProductCategoryContainer from './components/ProductCategory/ProductCategoryContainer/ProductCategoryContainer'
 
 
 const getItems=()=>{
@@ -66,8 +68,10 @@ function App() {
   return (
     <div className="App">
       <Navbar/>
-      {/* <ItemListcontainer props={listProducts}/> */}
+      <Carousel/>
+      <ProductCategoryContainer/>
       <ItemDetailContainer/>
+      <ItemListcontainer props={listProducts}/>
       <Footer/>
     </div>
 

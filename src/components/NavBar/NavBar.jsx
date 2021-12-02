@@ -4,15 +4,15 @@ import Shopwidget from './CartWidget/CartWidget'
 
 const NavBar = ()=>{
     return(
-		<nav className="navbar navbar-expand-lg navbar-light ">
+		<nav className="navbar navbar-expand-lg navbar-light fixed-top">
 				<div className="container">
-					<a className="navbar-brand" href="/#"><img src={Logo} alt="" width="110px" /></a>
+					<a className="navbar-brand" href="/#"><img src={Logo} alt="" width="150px" /></a>
 					<button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
 					<span className="navbar-toggler-icon"></span>
 					</button>
-					<div className="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+					<div className="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
 						<div className="navbar-nav">
-							<a className="nav-link active" href="/#">INICIO</a>
+							<a className="nav-link " href="/#">NOSOTRAS</a>
 							<li className="nav-item dropdown">
 								<a className="nav-link dropdown-toggle" href="/#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 									PRODUCTOS
@@ -23,10 +23,9 @@ const NavBar = ()=>{
 									<li><a className="dropdown-item" href="/#">BLUZAS</a></li>
 								</ul>
 							</li>
-                            <a className="nav-link " href="/#">NOSOTRAS</a>
-                            <a className="nav-link " href="/#">FLOR DE DATA</a>
-                            <a className="nav-link " href="/#">COMO COMPRAR</a>
-                            <a className="nav-link " href="/#">CONTACTO</a>
+							<a className="nav-link " href="/#">FLOR DE DATA</a>
+							<a className="nav-link " href="/#">COMO COMPRAR</a>
+							<a className="nav-link " href="/#">CONTACTO</a>
 							<Shopwidget numCompra={5}/>
 						</div>
 					</div>

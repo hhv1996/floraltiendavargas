@@ -6,7 +6,7 @@ const getItem=()=>{
        {
          id:'1',
          title:'Remera de hilo',
-         description:'Remera de hilo.</br>Medidas:</br>66 cm de ancho.</br>53 cm de largo total.',
+         description:'Remera de hilo.Medidas: 66 cm de ancho. 53 cm de largo total.',
          price:'1.780,00',
          imgUrl:'https://d22fxaf9t8d39k.cloudfront.net/fc1e09c7c1953da381e375f3ad58c5218130f6a4a2e2561d2f96256aecdc2ae414158.jpeg',
          carrouselImg:[

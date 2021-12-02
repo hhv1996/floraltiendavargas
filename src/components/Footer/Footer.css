@@ -1,7 +1,17 @@
 .navbar{
-    background: rgb(255, 202, 230)!important;
+    background: white!important;
+    
 }
+.navbarAlignBottom{
 
+    width: 100%;
+}
+@media screen and (max-width: 775px) {
+    .navbarAlignBottom{
+        position: absolute!important;
+        bottom: 0!important;
+    }
+  }
 .FooterA{
-    color: white!important;
+    color: black!important;
 }
