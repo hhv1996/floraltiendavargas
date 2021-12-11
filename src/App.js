@@ -1,4 +1,3 @@
-import { useState , useEffect} from 'react';
 import './App.css';
 import Navbar from './components/NavBar/NavBar'
 import ItemListcontainer from './components/Product/ItemListContainer/ItemListContainer'
@@ -13,10 +12,19 @@ function App() {
   return (
     <div className="App">
       <Navbar/>
-      <Carousel/>
-      <ProductCategoryContainer/>
-      <ItemDetailContainer/>
-      <ItemListcontainer/>
+      <BrowserRouter>
+        <Switch>
+          <Route exact path='/'>
+            <ItemListcontainer/>
+          </Route>
+          <Route  path='/category/:categoryId'>
+            <ProductCategoryContainer/>
+          </Route>
+          <Route  path='/detail/:productID'>
+            <ItemDetailContainer/>
+          </Route>
+        </Switch>
+      </BrowserRouter>
       <Footer/>
     </div>
 

@@ -2,8 +2,8 @@ const products = [
     {
         id:'1',
         title:'Remera de hilo',
-        description:'Remera de hilo.</br>Medidas:</br>66 cm de ancho.</br>53 cm de largo total.',
-        price:'$1.780,00',
+        description:'Remera de hilo.Medidas: 66 cm de ancho. 53 cm de largo total.',
+        price:'1.780,00',
         imgUrl:'https://d22fxaf9t8d39k.cloudfront.net/fc1e09c7c1953da381e375f3ad58c5218130f6a4a2e2561d2f96256aecdc2ae414158.jpeg',
         stock:4,
         arrayImgCarousel:[
@@ -95,6 +95,6 @@ export const getProductByCategory=(categoryId)=>{
 }
 export const getAllCategory=()=>{
     return new Promise((resolve, reject) =>{
-        setTimeout(() => resolve(object), 1000 )
+        setTimeout(() => resolve(category), 1000 )
     })
 }

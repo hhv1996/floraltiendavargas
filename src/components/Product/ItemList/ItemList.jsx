@@ -4,11 +4,11 @@ import Item from '../Item/Item'
 
 
 
-const ItemList = ({props})=>{
+const ItemList = ({ products = []})=>{
 
     return(
         <div className="card-group container justify-content-center"> 
-            {props.map(p => <Item key={p.id} title= {p.title} description={p.description} price={p.price} imgUrl={p.imgUrl} stock={p.Stock} />)}
+            {products.map(p => <Item product={p} />)}
         </div>
         
     )

@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import Itemlist from '../ItemList/ItemList'
 import { getAllProduct } from '../../../backEnd'
+import './ItemListContainer.css'
 
 const ItemListContainer = ()=>{
     const [listProducts,setListProducts] = useState ([])
@@ -9,8 +10,8 @@ const ItemListContainer = ()=>{
         products.then(response => {setListProducts(response)})
     },[]);
     return(
-        <div > 
-            <Itemlist props={listProducts}/>
+        <div className="itemListContainer"> 
+            <Itemlist products={listProducts}/>
         </div>
         
     )
