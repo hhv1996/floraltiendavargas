@@ -11,7 +11,7 @@ const products = [
             {imgCarousel:'https://d22fxaf9t8d39k.cloudfront.net/ca8cc93cebde7f67f25c584c6c1b3789775e708495872b01071b037aced6004b14158.jpeg'},
             {imgCarousel:'https://d22fxaf9t8d39k.cloudfront.net/396afcac2d8d890e94898c481b0e90dabb828e151bbe4493918e25b2011ce9f714158.jpeg'}
         ],
-        catogery:'Remera'
+        category:'Remera'
     },
     {
         id:'2',
@@ -22,7 +22,6 @@ const products = [
         stock:7,
         arrayImgCarousel:[
             {imgCarousel:'https://d22fxaf9t8d39k.cloudfront.net/fa9c9189aa5d7147774dea090ff1a623c170e874cf062066b560e92eb45d87d014158.jpeg'},
-            {imgCarousel:'https://d22fxaf9t8d39k.cloudfront.net/ca8cc93cebde7f67f25c584c6c1b3789775e708495872b01071b037aced6004b14158.jpeg'},
             {imgCarousel:'https://d22fxaf9t8d39k.cloudfront.net/1dfaac96126d9c8f60c00eac1b53d5f6119e800002cb3cfb0c815285d43bb8e614158.jpeg'}
         ],
         category:'Vestido'
@@ -58,23 +57,23 @@ const products = [
     {
         id:'5',
         title:'Camisa erika rosa',
-        description:'Camisa oversized manga larga con bolsillo delantero.<br><br>Color: rosa.<br><br>Tela: Poplin rayado<br><br><br><br>Medidas:<br><br>Largo mangas: 55 cm<br><br>Largo: 74 cm<br><br>Ancho: 65 cm<br><br><br><br>Las medidas son tomadas con la prenda apoyada, no en contornos.',
-        price:'$2.800,00',
+        description:'Camisa oversized manga larga con bolsillo delantero.Color: rosa.Tela: Poplin rayado Medidas:Largo mangas: 55 cmLargo: 74 cmAncho: 65 cmLas medidas son tomadas con la prenda apoyada, no en contornos.',
+        price:'2.800,00',
         imgUrl:'https://d22fxaf9t8d39k.cloudfront.net/6c75e69078259d188dc0761d1fb9120f742bf0e6e1fabf27d00c261af004820514158.jpeg',
         stock:1,
         arrayImgCarousel:[
-            {imgCarousel:'https://d22fxaf9t8d39k.cloudfront.net/fc1e09c7c1953da381e375f3ad58c5218130f6a4a2e2561d2f96256aecdc2ae414158.jpeg'},
-            {imgCarousel:'https://d22fxaf9t8d39k.cloudfront.net/ca8cc93cebde7f67f25c584c6c1b3789775e708495872b01071b037aced6004b14158.jpeg'},
-            {imgCarousel:'https://d22fxaf9t8d39k.cloudfront.net/396afcac2d8d890e94898c481b0e90dabb828e151bbe4493918e25b2011ce9f714158.jpeg'}
+            {imgCarousel:'https://d22fxaf9t8d39k.cloudfront.net/6c75e69078259d188dc0761d1fb9120f742bf0e6e1fabf27d00c261af004820514158.jpeg'},
+            {imgCarousel:'https://d22fxaf9t8d39k.cloudfront.net/56f3c4e121b8861cb690556d0682046634144dcd0e63a7662b024b2bbc27aa9c14158.jpeg'},
+            {imgCarousel:'https://d22fxaf9t8d39k.cloudfront.net/fe855266c08c0b0536265e3a8b64f0b004457e09b38076ed90a52528cdfeb07514158.jpeg'}
         ],
         category:'Camisa'
     }
 ]
 const category = [
-    {id:'Remera',description:'Remera'},
-    {id:'Vestido',description:'Vestido'},
-    {id:'Pollera',description:'Pollera'},
-    {id:'Camisa',description:'Camisa'}
+    {id:1,description:'Remera'},
+    {id:2,description:'Vestido'},
+    {id:3,description:'Pollera'},
+    {id:4,description:'Camisa'}
 ]
 export const getAllProduct=()=>{
     return new Promise((resolve, reject) =>{
@@ -89,7 +88,7 @@ export const getProductById=(id)=>{
 }
 export const getProductByCategory=(categoryId)=>{
     return new Promise((resolve, reject) =>{
-        const product = category.find(prod => parseInt(prod.id) === parseInt(categoryId))
+        const product = products.filter(prod => prod.category === categoryId)
         setTimeout(() => resolve(product), 1100 )
     })
 }

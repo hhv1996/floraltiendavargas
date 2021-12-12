@@ -10,9 +10,8 @@ const ItemListContainer = ()=>{
         const products = getProductById(productID)
         products.then(response => {
             setProduct(response)
-            console.log(response)
         })
-    },[]);
+    },[productID]);
     return(
         <div > 
             <ItemDetail product={product}/>

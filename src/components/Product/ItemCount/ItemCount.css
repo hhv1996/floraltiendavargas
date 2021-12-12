@@ -41,4 +41,5 @@
 }
 .itemCountAddRemoveContainer{
     padding-bottom: 5%;
+    display: flex;
 }

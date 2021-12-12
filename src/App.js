@@ -2,9 +2,7 @@ import './App.css';
 import Navbar from './components/NavBar/NavBar'
 import ItemListcontainer from './components/Product/ItemListContainer/ItemListContainer'
 import ItemDetailContainer from './components/Product/ItemDetailContainer/ItemDetailContainer'
-import Footer from './components/Footer/Footer'
-import Carousel from './components/Carousel/CarouselContainer/CarouselContainer'
-import ProductCategoryContainer from './components/ProductCategory/ProductCategoryContainer/ProductCategoryContainer'
+import ItemCategoryContainer from './components/Product/ItemCategoryContainer/ItemCategoryContainer'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
 
@@ -17,15 +15,14 @@ function App() {
           <Route exact path='/'>
             <ItemListcontainer/>
           </Route>
-          <Route  path='/category/:categoryId'>
-            <ProductCategoryContainer/>
+          <Route  path='/category/:categoryID'>
+            <ItemCategoryContainer/>
           </Route>
           <Route  path='/detail/:productID'>
             <ItemDetailContainer/>
           </Route>
         </Switch>
       </BrowserRouter>
-      <Footer/>
     </div>
 
   );
