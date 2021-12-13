@@ -4,7 +4,7 @@ import './ItemCount.css'
 import { useState,useEffect} from 'react';
 
 
-const ItemCount = ({stock,initial,title,desc,price})=>{
+const ItemCount = ({stock,initial,onAdd})=>{
     const [itemcount,setItemcount] = useState(initial)
     const [disabled,setDisabled] = useState("active")
     useEffect(() => {
@@ -22,25 +22,16 @@ const ItemCount = ({stock,initial,title,desc,price})=>{
             setItemcount(itemcount+1)
         }
     }
-    const msgBuy = ()=>{
-        if (stock>=itemcount) {
-            alert(`Compraste:${itemcount}SuperTrajes`);
-        }else{
-            alert("No hay Stock");
-        }
-    }
+
     return(
         <div className={`itemCounter ${disabled}`}>
-            <h3 className="itemCounttitle">{title}</h3>
-            <h2 className="itemCountprice">${price}</h2>
-            <p className="itemCountdesc">{desc}</p>
             <br/><br/>
             <div className="itemCountAddRemoveContainer">
                 <button className="itemCountButtonRemove" onClick={Remove}><RemoveIcon/></button>
                 <h4 className="itemCountNumber" >{itemcount}</h4>
                 <button className="itemCountButtonAdd" onClick={Add}><AddIcon/></button>               
             </div>
-            <button className="btn btn-secondary itemCountButtonAddToBag" onClick={msgBuy}>Agregar al carrito</button>            
+            <button className="btn btn-secondary itemCountButtonAddToBag" onClick={()=>onAdd(itemcount)}>Finalizar compra</button>            
         </div>
     )
 } 

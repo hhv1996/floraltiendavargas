@@ -1,5 +1,7 @@
 import './ItemDetail.css'
 import ItemCount from '../ItemCount/ItemCount'
+import { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 const ImgCarousel = (imgs=[])=>{
     let aux = -1
@@ -42,6 +44,10 @@ const IndicatorCarousel = (imgs=[])=>{
     )
 } 
 const ItemDetail = ({product})=>{
+    const [cantAdd,setCantAdd] = useState (0)
+    const onAdd = (cant)=>{
+        setCantAdd(cant)
+    }
     return(
         <div className="container itemDetailRow">
             <div id="carouselExampleIndicators" className="carousel slide mx-auto itemDetailcol1" data-bs-ride="carousel">
@@ -57,7 +63,15 @@ const ItemDetail = ({product})=>{
                 </button>
             </div>
             <div className="itemDetailcol2">
-                <ItemCount stock={product.stock} initial={1} title={product.title} desc={product.description} price={product.price}/>
+                <h3 className="itemCounttitle">{product.title}</h3>
+                <h2 className="itemCountprice">${product.price}</h2>
+                <p className="itemCountdesc">{product.description}</p>
+                {
+                    cantAdd===0?
+                    <ItemCount stock={product.stock} initial={1} title={product.title} desc={product.description} price={product.price} onAdd={onAdd}/>
+                    :
+                    <Link className="btn btn-secondary itemCountButtonAddToBag" to="/cart">Ir al carrito</Link>
+                }
             </div>
         </div>
     )
