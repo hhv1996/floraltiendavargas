@@ -1,10 +1,22 @@
 # FLORALTIENDA
 La aplicacion se centrara en un eCommence de ropa "femenina"
-
+# Tecnologia utilizada
++CSS
++JS
++HTML
+# Framework adicionales
++Material Icon
++React Bootstrap
+# Clonar repositorio
++git clone *URL del Proyecto*
+# Instalar dependencias
++npm install
+# Ejecutar proyecto
++npm start
 ## BackEnd
     Se simula el BackEnd en el archivo "backEnd.js" ubicado en src.
     El mismo contiene diferentes funciones:
-        * **getAllProducts():**
+        * *getAllProducts():*
             Esta funcion devuelve todos los productos disponibles
         * **getProductById():**
             Esta funcion dado un id devuelve los datos correspondiente al producto de dicho id

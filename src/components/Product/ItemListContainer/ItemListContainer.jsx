@@ -13,7 +13,6 @@ const ItemListContainer = ()=>{
         <div className="itemListContainer"> 
             <Itemlist products={listProducts}/>
         </div>
-        
     )
 } 
 export default ItemListContainer

@@ -77,7 +77,7 @@ const category = [
 ]
 export const getAllProduct=()=>{
     return new Promise((resolve, reject) =>{
-        setTimeout(() => resolve(products), 1000 )
+        setTimeout(() => resolve(products), 3000 )
     })
 }
 export const getProductById=(id)=>{

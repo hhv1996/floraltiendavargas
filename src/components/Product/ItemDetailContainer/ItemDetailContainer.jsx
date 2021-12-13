@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import ItemDetail from '../ItemDetail/ItemDetail'
 import { getProductById } from '../../../backEnd'
 import { useParams } from 'react-router'
+import SpinnerAnimation from '../../SpinnerAnimation/SpinnerAnimation'
 
 const ItemListContainer = ()=>{
     const [product,setProduct] = useState ([])
@@ -14,7 +15,7 @@ const ItemListContainer = ()=>{
     },[productID]);
     return(
         <div > 
-            <ItemDetail product={product}/>
+            {product.length!==0?<ItemDetail product={product}/>:<SpinnerAnimation/>}
         </div>
         
     )
