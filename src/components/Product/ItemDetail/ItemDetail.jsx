@@ -1,12 +1,13 @@
 import './ItemDetail.css'
 import ItemCount from '../ItemCount/ItemCount'
-import { useState } from 'react'
+import { useState,useContext } from 'react'
 import { Link } from 'react-router-dom'
+import CartContextProvider from '../../../context/CartContext'
+
 
 const ImgCarousel = (imgs=[])=>{
     let aux = -1
     let classname = "carousel-item"
-    console.log(imgs)
     return(
         <div className="carousel-inner">
         {   
@@ -25,7 +26,6 @@ const ImgCarousel = (imgs=[])=>{
 } 
 const IndicatorCarousel = (imgs=[])=>{
     let aux = -1
-    console.log(imgs)
     return(
         <div className="carousel-indicators">
         {   
@@ -45,10 +45,10 @@ const IndicatorCarousel = (imgs=[])=>{
 } 
 const ItemDetail = ({product})=>{
     const [cantAdd,setCantAdd] = useState (0)
-    const onAdd = (cant)=>{
-        setCantAdd(cant)
-    }
+    const { addItem } = useContext(CartContextProvider)
+
     return(
+
         <div className="container itemDetailRow">
             <div id="carouselExampleIndicators" className="carousel slide mx-auto itemDetailcol1" data-bs-ride="carousel">
                 {product!==[]?IndicatorCarousel(product.arrayImgCarousel): <div></div> }
@@ -68,7 +68,7 @@ const ItemDetail = ({product})=>{
                 <p className="itemCountdesc">{product.description}</p>
                 {
                     cantAdd===0?
-                    <ItemCount stock={product.stock} initial={1} title={product.title} desc={product.description} price={product.price} onAdd={onAdd}/>
+                    <ItemCount product={product} initial={1} addItem={addItem}/>
                     :
                     <Link className="btn btn-secondary itemCountButtonAddToBag" to="/cart">Ir al carrito</Link>
                 }
