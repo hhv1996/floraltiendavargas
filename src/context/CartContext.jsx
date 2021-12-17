@@ -4,7 +4,7 @@ const Context = React.createContext()
 
 export const CartContextProvider = ({children}) => {
     const [products, setProducts] = useState([])
-
+    
     const addItem = (product,quantity) => {
         let auxProducts = products
         if (isInCart(product.id)) {
