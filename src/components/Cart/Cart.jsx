@@ -1,7 +1,8 @@
 import { useContext } from 'react'
 import CartContextProvider from '../../context/CartContext'
+import './Cart.css'
 
-const tableRow = (products=[])=>{
+const tableRow = (products=[],removeItem)=>{
     return(
         <tbody>
         {   
@@ -9,10 +10,11 @@ const tableRow = (products=[])=>{
                 {
                     return (
                     <tr>
-                        <th scope="row">{p.title}</th>
-                        <td>{p.description}</td>
+                        <th scope="row"><img src={p.imgUrl} alt={p.title} className='cartImg'/></th>
+                        <td>{p.title}</td>
                         <td>{p.quantity}</td>
                         <td>{p.price}</td>
+                        <td> <button onClick={() => removeItem(p.id)}>Remove {p.id}</button></td>
                     </tr>
                     )
                 }
@@ -23,11 +25,10 @@ const tableRow = (products=[])=>{
 } 
 
 const Cart = ()=>{
-    const { productsList } = useContext(CartContextProvider)
-    console.log(productsList)
+    const {productsList,removeItem} = useContext(CartContextProvider)
     return(
-        <div className="container"> 
-            <table className="table">
+        <div className="cartContainer"> 
+            <table className="table cartTable">
                 <thead className="thead-light">
                     <tr>
                     <th scope="col">Producto</th>
@@ -36,7 +37,7 @@ const Cart = ()=>{
                     <th scope="col">Precio Unitario</th>
                     </tr>
                 </thead>
-                {/* {products.length!==0? tableRow(products): <div></div> } */}
+                {productsList.length!==0? tableRow(productsList,removeItem): <div></div> }
             </table>
         </div>
         

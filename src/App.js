@@ -12,8 +12,8 @@ function App() {
   return (
     <div className="App">
       <CartContextProvider>
-        <Navbar/>
         <BrowserRouter>
+        <Navbar/>
           <Switch>
             <Route exact path='/'>
               <ItemListcontainer/>

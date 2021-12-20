@@ -4,7 +4,7 @@ import './ItemCount.css'
 import { useState,useEffect} from 'react';
 
 
-const ItemCount = ({product,initial,addItem})=>{
+const ItemCount = ({product,initial,addItem,setCantAdd})=>{
     let stock = product.stock
     const [itemcount,setItemcount] = useState(initial)
     const [disabled,setDisabled] = useState("active")
@@ -32,7 +32,7 @@ const ItemCount = ({product,initial,addItem})=>{
                 <h4 className="itemCountNumber" >{itemcount}</h4>
                 <button className="itemCountButtonAdd" onClick={Add}><AddIcon/></button>               
             </div>
-            <button className="btn btn-secondary itemCountButtonAddToBag" onClick={()=>addItem(product,itemcount)}>Finalizar compra</button>            
+            <button className="btn btn-secondary itemCountButtonAddToBag" onClick={()=>{addItem(product,itemcount); setCantAdd()}}>Finalizar compra</button>            
         </div>
     )
 } 

@@ -4,7 +4,7 @@ const Context = React.createContext()
 
 export const CartContextProvider = ({children}) => {
     const [products, setProducts] = useState([])
-    
+
     const addItem = (product,quantity) => {
         let auxProducts = products
         if (isInCart(product.id)) {
@@ -30,7 +30,7 @@ export const CartContextProvider = ({children}) => {
         let auxProducts = products
         const browserFunction = (p) => p.id === id
         let index = auxProducts.findIndex(browserFunction)
-        auxProducts.slice(index,1)
+        auxProducts.splice(index,1)
         setProducts(auxProducts)
     }    
     const clear = () => {
@@ -46,7 +46,7 @@ export const CartContextProvider = ({children}) => {
     }
     return (
         <Context.Provider value={{
-            productsList: {products},
+            productsList: products,
             addItem,
             removeItem,
             clear,

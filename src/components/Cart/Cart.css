@@ -1,0 +1,16 @@
+.cartImg{
+    width: 70px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.cartTable{
+    text-align: center;
+    vertical-align: middle!important;
+    align-items: center;
+}
+
+.cartContainer{
+    width: 50%;
+    margin: 0 auto;
+}

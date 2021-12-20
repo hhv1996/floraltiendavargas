@@ -3,12 +3,13 @@ import Logo from './logo.png'
 import Shopwidget from './CartWidget/CartWidget'
 import { getAllCategory } from '../../backEnd'
 import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 
 const ProductList = (categorys=[])=>{
     return(
 		<ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 			{            
-			categorys.map(c => <li><a className="dropdown-item" href={"/category/"+c.description}>{c.description}</a></li> )
+			categorys.map(c => <li><Link className="dropdown-item" to={"/category/"+c.description}>{c.description}</Link></li> )
 			}
 		</ul>
     )
@@ -24,17 +25,17 @@ const NavBar = ()=>{
     return(
 		<nav className="navbar navbar-expand-lg navbar-light">
 				<div className="container">
-					<a className="navbar-brand" href="/"><img src={Logo} alt="" width="150px" /></a>
+					<Link className="navbar-brand" to="/"><img src={Logo} alt="" width="150px" /></Link>
 					<button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
 					<span className="navbar-toggler-icon"></span>
 					</button>
 					<div className="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
 						<div className="navbar-nav">
-							<a className="nav-link " href="/#">NOSOTRAS</a>
+							<Link className="nav-link " to="/#">NOSOTRAS</Link>
 							<li className="nav-item dropdown">
-								<a className="nav-link dropdown-toggle" href="/#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+								<Link className="nav-link dropdown-toggle" to="/#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 									PRODUCTOS
-								</a>
+								</Link>
 								{/* <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 									<li><a className="dropdown-item" href="/#">REMERAS</a></li>
 									<li><a className="dropdown-item" href="/#">ZAPATOS</a></li>
@@ -42,9 +43,9 @@ const NavBar = ()=>{
 								</ul> */}
 								{listCategory!==[]?ProductList(listCategory): <div></div> }
 							</li>
-							<a className="nav-link " href="/#">FLOR DE DATA</a>
-							<a className="nav-link " href="/#">COMO COMPRAR</a>
-							<a className="nav-link " href="/#">CONTACTO</a>
+							<Link className="nav-link " to="/#">FLOR DE DATA</Link>
+							<Link className="nav-link " to="/#">COMO COMPRAR</Link>
+							<Link className="nav-link " to="/#">CONTACTO</Link>
 							<Shopwidget numCompra={5}/>
 						</div>
 					</div>

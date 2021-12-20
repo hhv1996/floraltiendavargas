@@ -68,7 +68,7 @@ const ItemDetail = ({product})=>{
                 <p className="itemCountdesc">{product.description}</p>
                 {
                     cantAdd===0?
-                    <ItemCount product={product} initial={1} addItem={addItem}/>
+                    <ItemCount product={product} initial={1} addItem={addItem} setCantAdd = {setCantAdd}/>
                     :
                     <Link className="btn btn-secondary itemCountButtonAddToBag" to="/cart">Ir al carrito</Link>
                 }
