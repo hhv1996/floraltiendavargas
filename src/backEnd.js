@@ -3,7 +3,7 @@ const products = [
         id:'1',
         title:'Remera de hilo',
         description:'Remera de hilo.Medidas: 66 cm de ancho. 53 cm de largo total.',
-        price:'1.780,00',
+        price:'1780.00',
         imgUrl:'https://d22fxaf9t8d39k.cloudfront.net/fc1e09c7c1953da381e375f3ad58c5218130f6a4a2e2561d2f96256aecdc2ae414158.jpeg',
         stock:4,
         arrayImgCarousel:[
@@ -17,7 +17,7 @@ const products = [
         id:'2',
         title:'Vestido Blanco Flores',
         description:'Vestido Blanco flores. Talle U',
-        price:'1.750,00',
+        price:'1750.00',
         imgUrl:'https://d22fxaf9t8d39k.cloudfront.net/2aa5f010aa8cb3938d804b540c80ff73215e91e24f4234bfec016c1bb0b69bdf14158.jpeg',
         stock:7,
         arrayImgCarousel:[
@@ -30,7 +30,7 @@ const products = [
         id:'3',
         title:'Pollera Lino',
         description:'Pollera Lino , colores disponibles Lima y terracota',
-        price:'2.120,00',
+        price:'2120.00',
         imgUrl:'https://d22fxaf9t8d39k.cloudfront.net/970bd1e76ed3f970021da2b0362db93653fcf6b5108d42a7df103eba1364349414158.jpeg',
         stock:2,
         arrayImgCarousel:[
@@ -44,7 +44,7 @@ const products = [
         id:'4',
         title:'Vestido lino Terracota',
         description:'Vestido de lino color terracota',
-        price:'3.490,00',
+        price:'3490.00',
         imgUrl:'https://d22fxaf9t8d39k.cloudfront.net/59abd256d5259ccfac6dd36b644d5cbea347dcb8797e6716cf336621ca906f5d14158.jpeg',
         stock:2,
         arrayImgCarousel:[
@@ -58,7 +58,7 @@ const products = [
         id:'5',
         title:'Camisa erika rosa',
         description:'Camisa oversized manga larga con bolsillo delantero.Color: rosa.Tela: Poplin rayado Medidas:Largo mangas: 55 cmLargo: 74 cmAncho: 65 cmLas medidas son tomadas con la prenda apoyada, no en contornos.',
-        price:'2.800,00',
+        price:'2800.00',
         imgUrl:'https://d22fxaf9t8d39k.cloudfront.net/6c75e69078259d188dc0761d1fb9120f742bf0e6e1fabf27d00c261af004820514158.jpeg',
         stock:1,
         arrayImgCarousel:[

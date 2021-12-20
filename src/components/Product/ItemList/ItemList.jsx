@@ -9,7 +9,7 @@ const ItemList = ({ products = []})=>{
 
     return(
         <div className="card-group container justify-content-center"> 
-            {products.length!==0?products.map(p => <Item product={p}/>):<SpinnerAnimation/>}
+            {products.length!==0?products.map(p => <Item key = {p.id} product={p}/>):<SpinnerAnimation/>}
         </div>
         
     )

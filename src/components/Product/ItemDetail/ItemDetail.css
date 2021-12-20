@@ -4,6 +4,7 @@
     object-fit:cover;
 }
 .itemDetailcol2 {
+   padding-top: 15%;
     grid-row: 1; 
     grid-column: 2;
  }

@@ -14,3 +14,14 @@
     width: 50%;
     margin: 0 auto;
 }
+.CartButtonAddToBag{
+    height: fit-content;
+    width: fit-content;
+    padding-top: 10px;
+    background-color: rgba(247, 169, 215, 0.788)!important;
+    border-color: transparent!important;
+    margin-top: 15px;
+}
+.cartContainerMsgCompras{
+    padding-top: 15%;
+}

@@ -1,15 +1,16 @@
 import './NavBar.css'
 import Logo from './logo.png'
-import Shopwidget from './CartWidget/CartWidget'
+import CartWidget from './CartWidget/CartWidget'
+import CartContextProvider from '../../context/CartContext'
 import { getAllCategory } from '../../backEnd'
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 
 const ProductList = (categorys=[])=>{
     return(
 		<ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 			{            
-			categorys.map(c => <li><Link className="dropdown-item" to={"/category/"+c.description}>{c.description}</Link></li> )
+			categorys.map(c => <li><Link key = {c.description} className="dropdown-item" to={"/category/"+c.description}>{c.description}</Link></li> )
 			}
 		</ul>
     )
@@ -17,6 +18,8 @@ const ProductList = (categorys=[])=>{
 
 const NavBar = ()=>{
 	const [listCategory,setListCategory] = useState ([])
+	const {cantItems} = useContext(CartContextProvider)
+
     useEffect(() => {
         const catogrys = getAllCategory()
         catogrys.then(response => {setListCategory(response)})
@@ -36,17 +39,12 @@ const NavBar = ()=>{
 								<Link className="nav-link dropdown-toggle" to="/#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 									PRODUCTOS
 								</Link>
-								{/* <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-									<li><a className="dropdown-item" href="/#">REMERAS</a></li>
-									<li><a className="dropdown-item" href="/#">ZAPATOS</a></li>
-									<li><a className="dropdown-item" href="/#">BLUZAS</a></li>
-								</ul> */}
 								{listCategory!==[]?ProductList(listCategory): <div></div> }
 							</li>
 							<Link className="nav-link " to="/#">FLOR DE DATA</Link>
 							<Link className="nav-link " to="/#">COMO COMPRAR</Link>
 							<Link className="nav-link " to="/#">CONTACTO</Link>
-							<Shopwidget numCompra={5}/>
+							{cantItems!==0?<CartWidget numCompra={cantItems}/>: <div></div> }
 						</div>
 					</div>
 				</div>

@@ -26,7 +26,6 @@ const ItemCount = ({product,initial,addItem,setCantAdd})=>{
 
     return(
         <div className={`itemCounter ${disabled}`}>
-            <br/><br/>
             <div className="itemCountAddRemoveContainer">
                 <button className="itemCountButtonRemove" onClick={Remove}><RemoveIcon/></button>
                 <h4 className="itemCountNumber" >{itemcount}</h4>

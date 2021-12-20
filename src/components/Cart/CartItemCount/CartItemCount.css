@@ -1,32 +1,32 @@
-.itemCounter{
+.CartCounter{
     width: 100%!important;
     padding-top: 10%;
 }
-.itemCountButtonAddToBag{
+.CartButtonAddToBag{
     padding-top: 10px;
     width: 100%;
     background-color: rgba(247, 169, 215, 0.788)!important;
     border-color: transparent!important;
     margin-top: 15px;
 }
-.itemCountNumber{
+.CartNumber{
     padding-left: 40px;
     padding-right: 40px;
     text-decoration: none;
     color: black;
 }
-.itemCountNumber:hover{
+.CartNumber:hover{
     color: black;
 }
-.itemCountButtonRemove:hover,.itemCountButtonAdd:hover{
+.CartButtonRemove:hover,.CartButtonAdd:hover{
     background-color: rgba(255, 202, 230, 0.507);
     border-radius: 7px;
 }
-.itemCountButtonRemove,.itemCountButtonAdd{
+.CartButtonRemove,.CartButtonAdd{
     background: transparent;
     border:none
 }
-.itemCounterCard{
+.CarterCard{
     border-right-color: transparent!important;
     border-left-color: transparent!important;
     border-top-color: transparent!important;
@@ -39,9 +39,7 @@
   opacity: 0.5;
   background: #CCC;
 }
-.itemCountAddRemoveContainer{
+.CartAddRemoveContainer{
     padding-bottom: 5%;
     display: flex;
-    align-items: center;
-    justify-content: center;
 }
