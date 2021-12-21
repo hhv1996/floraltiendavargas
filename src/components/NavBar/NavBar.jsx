@@ -2,7 +2,8 @@ import './NavBar.css'
 import Logo from './logo.png'
 import CartWidget from './CartWidget/CartWidget'
 import CartContextProvider from '../../context/CartContext'
-import { getAllCategory } from '../../backEnd'
+import { collection, getDocs} from 'firebase/firestore' ;
+import { db } from '../../service/firebase/firebase';
 import { useContext, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 
@@ -21,8 +22,15 @@ const NavBar = ()=>{
 	const {cantItems} = useContext(CartContextProvider)
 
     useEffect(() => {
-        const catogrys = getAllCategory()
-        catogrys.then(response => {setListCategory(response)})
+		getDocs(collection(db,'categorys')).then((querySnapshot)=>{
+            const auxCategorys = querySnapshot.docs.map((doc)=>{
+                return{id:doc.id,...doc.data()}
+            })
+			console.log(auxCategorys)
+            setListCategory (auxCategorys)
+        }).catch((error)=>{
+            console.log("Error en la promise products:"+ error)
+        })
     },[]);
 
     return(

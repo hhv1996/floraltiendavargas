@@ -16,7 +16,7 @@ const ImgCarousel = (imgs=[])=>{
                     aux++
                     return (
                         <div className={aux===0?classname+" active":classname}>
-                            <img src={i.imgCarousel} className="d-block w-100 img-fit" alt="..."/>
+                            <img src={imgs[aux]} className="d-block w-100 img-fit" alt="..."/>
                         </div>)
                 }
             )

@@ -3,14 +3,17 @@ import ItemDetail from '../ItemDetail/ItemDetail'
 import { getProductById } from '../../../backEnd'
 import { useParams } from 'react-router'
 import SpinnerAnimation from '../../SpinnerAnimation/SpinnerAnimation'
+import { getDoc, doc } from 'firebase/firestore';
+import { db } from '../../../service/firebase/firebase';
 
 const ItemListContainer = ()=>{
     const [product,setProduct] = useState ([])
     const { productID } = useParams()
     useEffect(() => {
-        const products = getProductById(productID)
-        products.then(response => {
-            setProduct(response)
+        getDoc(doc(db,'products',productID)).then((querySnapshot)=>{
+            const auxProduct = {id:querySnapshot.id,...querySnapshot.data()}
+            setProduct(auxProduct)
+            console.log(auxProduct)
         })
     },[productID]);
     return(
