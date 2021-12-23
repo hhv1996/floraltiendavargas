@@ -1,5 +1,6 @@
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
+import { Link } from 'react-router-dom'
 import './ItemCount.css'
 import { useState,useEffect} from 'react';
 
@@ -25,6 +26,12 @@ const ItemCount = ({product,initial,addItem,setCantAdd})=>{
     }
 
     return(
+        stock===0?
+        <div>
+            <p>Producto sin stock</p>
+            <Link className="btn btn-secondary CartButtonAddToBag" to={"/"}>Volver al inicio</Link>
+        </div>
+        :
         <div className={`itemCounter ${disabled}`}>
             <div className="itemCountAddRemoveContainer">
                 <button className="itemCountButtonRemove" onClick={Remove}><RemoveIcon/></button>

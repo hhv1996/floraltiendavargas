@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
 import ItemDetail from '../ItemDetail/ItemDetail'
-import { getProductById } from '../../../backEnd'
 import { useParams } from 'react-router'
 import SpinnerAnimation from '../../SpinnerAnimation/SpinnerAnimation'
 import { getDoc, doc } from 'firebase/firestore';

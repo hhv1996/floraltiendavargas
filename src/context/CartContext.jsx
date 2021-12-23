@@ -5,11 +5,14 @@ const Context = React.createContext()
 export const CartContextProvider = ({children}) => {
     const [products, setProducts] = useState([])
     const [cantItems, setCantItems] = useState(-1)
+    const [totalPrice, setTotalPrice] = useState(0)
 
     useEffect(() => {
         let auxProducts = [...products]
-        let sum = auxProducts.reduce( (previousValue, currentValue) => previousValue + currentValue.quantity, 0);
-        setCantItems(sum)
+        let cantProd = auxProducts.reduce( (previousValue, currentValue) => previousValue + currentValue.quantity, 0);
+        let sumPrice = auxProducts.reduce( (previousValue, currentValue) => previousValue + parseFloat(currentValue.price,10), 0);
+        setCantItems(cantProd)
+        setTotalPrice(sumPrice)
     },[products]);
     const addItem = (product,quantity) => {
         let auxProducts = [...products]
@@ -54,7 +57,7 @@ export const CartContextProvider = ({children}) => {
             return p
         })
         setProducts(auxProducts)
-    }
+    }    
     return (
         <Context.Provider value={{
             productsList: products,
@@ -63,7 +66,8 @@ export const CartContextProvider = ({children}) => {
             clear,
             isInCart,
             modify,
-            cantItems: cantItems
+            cantItems: cantItems,
+            totalPrice:totalPrice
         }}>
             {children}
         </Context.Provider>
