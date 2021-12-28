@@ -1,5 +1,6 @@
 import { useContext, useState } from 'react'
 import CartContextProvider from '../../context/CartContext'
+import BuyerContextProvider from '../../context/BuyerContext'
 import CartItemCount from './CartItemCount/CartItemCount'
 import Delete from '@mui/icons-material/Delete'
 import SpinnerAnimation from '../SpinnerAnimation/SpinnerAnimation'
@@ -14,14 +15,15 @@ const Cart = ()=>{
     const [idCompra,setIdCompra] = useState("")
     const [buyInProces,setBuyInProces] = useState(false)
     const {productsList,removeItem,modify,clear,totalPrice} = useContext(CartContextProvider)
+    const {name,phone,mail} = useContext(BuyerContextProvider)
 
     const createOrder=()=>{
         setBuyInProces(true)
         const buy={
             buyer:{
-                name: "Hugo",
-                phone: "1535821227",
-                mail: "hhv1996@gmail.com"
+                name: name,
+                phone: phone,
+                mail: mail
             },
             items: productsList,
             date: Date.now(),
