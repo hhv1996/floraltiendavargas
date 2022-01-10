@@ -2,20 +2,12 @@ import './NavBar.css'
 import Logo from './logo.png'
 import CartWidget from './CartWidget/CartWidget'
 import CartContextProvider from '../../context/CartContext'
+import CategoryList from './CategoryList'
 import { collection, getDocs} from 'firebase/firestore' ;
 import { db } from '../../service/firebase/firebase';
 import { useContext, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 
-const ProductList = (categorys=[])=>{
-    return(
-		<ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-			{            
-			categorys.map(c => <li><Link key = {c.description} className="dropdown-item" to={"/category/"+c.description}>{c.description}</Link></li> )
-			}
-		</ul>
-    )
-} 
 
 const NavBar = ()=>{
 	const [listCategory,setListCategory] = useState ([])
@@ -47,7 +39,7 @@ const NavBar = ()=>{
 								<Link className="nav-link dropdown-toggle" to="/#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 									PRODUCTOS
 								</Link>
-								{listCategory!==[]?ProductList(listCategory): <div></div> }
+								{listCategory!==[]?<CategoryList categorys={listCategory}/>: <div></div> }
 							</li>
 							<Link className="nav-link " to="/#">FLOR DE DATA</Link>
 							<Link className="nav-link " to="/#">COMO COMPRAR</Link>

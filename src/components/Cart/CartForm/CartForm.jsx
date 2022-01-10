@@ -23,29 +23,29 @@ const CartForm = ({ isOpen, closeModal, title}) => {
         <div className={`cartFormContainer ${name===""? 'cartForm-open':""}`} onClick={closeModal}>
             <div className="cartForm-dialog" onClick={handleModalDialogClick}>
             <form>
-                <div class="form-group row">
-                    <label for="name" class="col-sm-2 col-form-label">Nombre</label>
-                    <div class="col-sm-10">
-                        <input onChange={changeInput} type="text" class="form-control" id="name" name='name' placeholder="Nombre"/>
+                <div className="form-group row">
+                    <label htmlFor="name" className="col-sm-2 col-form-label">Nombre</label>
+                    <div className="col-sm-10">
+                        <input onChange={changeInput} type="text" className="form-control" id="name" name='name' placeholder="Nombre"/>
                     </div>
                 </div>
                 <br/>
-                <div class="form-group row">
-                    <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
-                    <div class="col-sm-10">
-                        <input onChange={changeInput} type="email" class="form-control" id="inputEmail3" name='mail' placeholder="Email"/>
+                <div className="form-group row">
+                    <label htmlFor="inputEmail3" className="col-sm-2 col-form-label">Email</label>
+                    <div className="col-sm-10">
+                        <input onChange={changeInput} type="email" className="form-control" id="inputEmail3" name='mail' placeholder="Email"/>
                     </div>
                 </div>
                 <br/>
-                <div class="form-group row">
-                    <label for="phone" class="col-sm-2 col-form-label">Telefono</label>
-                    <div class="col-sm-10">
-                        <input onChange={changeInput} type="text" class="form-control" id="phone" name='phone' placeholder="Telefono"/>
+                <div className="form-group row">
+                    <label htmlFor="phone" className="col-sm-2 col-form-label">Telefono</label>
+                    <div className="col-sm-10">
+                        <input onChange={changeInput} type="text" className="form-control" id="phone" name='phone' placeholder="Telefono"/>
                     </div>
                 </div>
             </form>
             <br/>
-            <button class="btn btn-primary" onClick={()=>{setBuyer(auxBuyer.name,auxBuyer.phone,auxBuyer.mail)}}>Guardar</button>
+            <button className="btn btn-primary" onClick={()=>{setBuyer(auxBuyer.name,auxBuyer.phone,auxBuyer.mail)}}>Guardar</button>
             </div>
         </div>
     )

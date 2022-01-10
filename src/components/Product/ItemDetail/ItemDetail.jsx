@@ -1,48 +1,12 @@
 import './ItemDetail.css'
 import ItemCount from '../ItemCount/ItemCount'
 import { useState,useContext } from 'react'
+import ImgCarousel from './ImgCarousel'
+import IndicatorCarousel from './IndicatorCarousel'
 import { Link } from 'react-router-dom'
 import CartContextProvider from '../../../context/CartContext'
 
 
-const ImgCarousel = (imgs=[])=>{
-    let aux = -1
-    let classname = "carousel-item"
-    return(
-        <div className="carousel-inner">
-        {   
-            imgs.map(i =>         
-                {
-                    aux++
-                    return (
-                        <div className={aux===0?classname+" active":classname}>
-                            <img src={imgs[aux]} className="d-block w-100 img-fit" alt="..."/>
-                        </div>)
-                }
-            )
-        }
-        </div>
-    )
-} 
-const IndicatorCarousel = (imgs=[])=>{
-    let aux = -1
-    return(
-        <div className="carousel-indicators">
-        {   
-            imgs.map(i =>         
-                {
-                    aux++
-                    return (aux===0?
-                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to={aux} className="active" aria-current="true" aria-label={"Slide "+ aux+1}></button>
-                        :
-                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to={aux} aria-label={"Slide "+ aux+1}></button>
-                        )
-                }
-            )
-        }
-        </div>
-    )
-} 
 const ItemDetail = ({product})=>{
     const [cantAdd,setCantAdd] = useState (0)
     const { addItem } = useContext(CartContextProvider)
@@ -51,8 +15,8 @@ const ItemDetail = ({product})=>{
 
         <div className="container itemDetailRow">
             <div id="carouselExampleIndicators" className="carousel slide mx-auto itemDetailcol1" data-bs-ride="carousel">
-                {product!==[]?IndicatorCarousel(product.arrayImgCarousel): <div></div> }
-                {product!==[]?ImgCarousel(product.arrayImgCarousel): <div></div> }
+                {product!==[]?<IndicatorCarousel imgs={product.arrayImgCarousel}/>: <div></div> }
+                {product!==[]?<ImgCarousel imgs = {product.arrayImgCarouse}l/>: <div></div> }
                 <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
                     <span className="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span className="visually-hidden">Previous</span>
