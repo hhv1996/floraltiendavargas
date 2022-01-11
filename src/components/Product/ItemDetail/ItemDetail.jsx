@@ -15,8 +15,8 @@ const ItemDetail = ({product})=>{
 
         <div className="container itemDetailRow">
             <div id="carouselExampleIndicators" className="carousel slide mx-auto itemDetailcol1" data-bs-ride="carousel">
-                {product!==[]?<IndicatorCarousel imgs={product.arrayImgCarousel}/>: <div></div> }
-                {product!==[]?<ImgCarousel imgs = {product.arrayImgCarouse}l/>: <div></div> }
+                {product!==[]?<IndicatorCarousel imgs={product.arrayImgCarousel} key={Math.random().toString(36).substr(2, 9)}/>: <div></div> }
+                {product!==[]?<ImgCarousel imgs = {product.arrayImgCarousel} key={Math.random().toString(36).substr(2, 9)}/>: <div></div> }
                 <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
                     <span className="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span className="visually-hidden">Previous</span>

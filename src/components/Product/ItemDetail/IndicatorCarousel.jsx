@@ -9,7 +9,7 @@ const IndicatorCarousel = ({imgs=[]}) => {
                 {
                     aux++
                     return (aux===0?
-                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to={aux} className="active" aria-current="true" aria-label={"Slide "+ aux+1}></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to={aux} className="active" aria-current="true" aria-label={"Slide "+ aux+1} key={i}></button>
                         :
                         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to={aux} aria-label={"Slide "+ aux+1}></button>
                         )

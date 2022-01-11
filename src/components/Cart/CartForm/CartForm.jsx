@@ -21,7 +21,7 @@ const CartForm = ({ isOpen, closeModal, title}) => {
     }
     return (
         <div className={`cartFormContainer ${name===""? 'cartForm-open':""}`} onClick={closeModal}>
-            <div className="cartForm-dialog" onClick={handleModalDialogClick}>
+            <div className="cartForm-dialog" onClick={()=>handleModalDialogClick}>
             <form>
                 <div className="form-group row">
                     <label htmlFor="name" className="col-sm-2 col-form-label">Nombre</label>
