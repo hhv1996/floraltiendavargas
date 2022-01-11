@@ -3,15 +3,15 @@ import {getFirestore} from  'firebase/firestore'
 import { collection, getDocs, query, where, limit } from 'firebase/firestore'
 
 const firebaseConfig = {
-    apiKey: "AIzaSyB_0xPh8nYrAWjaXz3wLQQWFjE1F92LiAM",
-    authDomain: "floraltienda-vargas.firebaseapp.com",
-    projectId: "floraltienda-vargas",
-    storageBucket: "floraltienda-vargas.appspot.com",
-    messagingSenderId: "62815136712",
-    appId: "1:62815136712:web:38176760b879af6d51aefd",
-    measurementId: "G-BHSJ9BYKLK"
+    apiKey: process.env.REACT_APP_apiKey,
+    authDomain: process.env.REACT_APP_authDomain,
+    projectId: process.env.REACT_APP_projectId,
+    storageBucket: process.env.REACT_APP_storageBucket,
+    messagingSenderId: process.env.REACT_APP_messagingSenderId,
+    appId: process.env.REACT_APP_appId,
+    measurementId: process.env.REACT_APP_measurementId
   };
-
+  console.log(firebaseConfig)
   const app = initializeApp (firebaseConfig)
   export const db = getFirestore(app)
 
