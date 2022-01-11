@@ -1,19 +1,15 @@
 import { useEffect, useState } from 'react';
 import Itemlist from '../ItemList/ItemList'
 import './ItemListContainer.css'
-import { collection, getDocs} from 'firebase/firestore';
-import { db } from '../../../service/firebase/firebase';
+import { getProducts } from '../../../service/firebase/firebase'    
 
 const ItemListContainer = ()=>{
     const [listProducts,setListProducts] = useState ([])
     useEffect(() => {
-        getDocs(collection(db,'products')).then((querySnapshot)=>{
-            const auxProducts = querySnapshot.docs.map((doc)=>{
-                return{id:doc.id,...doc.data()}
-            })
-            setListProducts (auxProducts)
-        }).catch((error)=>{
-            console.log("Error en la promise products:"+ error)
+        getProducts('category', '==', undefined).then(products => {
+            setListProducts(products)
+        }).catch(error => {
+            console.log(error)
         })
     },[]);
     return(
