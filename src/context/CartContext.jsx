@@ -10,9 +10,13 @@ export const CartContextProvider = ({children}) => {
     useEffect(() => {
         let auxProducts = [...products]
         let cantProd = auxProducts.reduce( (previousValue, currentValue) => previousValue + currentValue.quantity, 0);
-        let sumPrice = auxProducts.reduce( (previousValue, currentValue) => previousValue + parseFloat(currentValue.price,10), 0);
+        // let sumPrice = auxProducts.reduce( (previousValue, currentValue) => previousValue + parseFloat(currentValue.price,10), 0);
+        let auxTotalPrice = 0
+        auxProducts.forEach(p => {
+            auxTotalPrice=auxTotalPrice+(p.quantity*p.price)
+        });
+        setTotalPrice(auxTotalPrice)
         setCantItems(cantProd)
-        setTotalPrice(sumPrice)
     },[products]);
     const addItem = (product,quantity) => {
         let auxProducts = [...products]
@@ -57,7 +61,7 @@ export const CartContextProvider = ({children}) => {
             return p
         })
         setProducts(auxProducts)
-    }    
+    } 
     return (
         <Context.Provider value={{
             productsList: products,

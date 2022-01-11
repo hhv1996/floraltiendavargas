@@ -39,7 +39,7 @@ const NavBar = ()=>{
 								<Link className="nav-link dropdown-toggle" to="/#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 									PRODUCTOS
 								</Link>
-								{listCategory!==[]?<CategoryList categorys={listCategory} key={Math.random().toString(36).substr(2, 9)}/>: <div></div> }
+								{listCategory!==[]?<CategoryList categorys={listCategory} />: <div></div> }
 							</li>
 							<Link className="nav-link " to="/#">FLOR DE DATA</Link>
 							<Link className="nav-link " to="/#">COMO COMPRAR</Link>
